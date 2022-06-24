@@ -1,0 +1,2 @@
+web: bash train/train.sh
+web: bash deploy/deploy.sh
