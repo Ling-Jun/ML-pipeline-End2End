@@ -1,1 +1,1 @@
-web: python ./deploy/deploy.py
+web: uvicorn deploy.deploy:app --host 0.0.0.0 --port $PORT
