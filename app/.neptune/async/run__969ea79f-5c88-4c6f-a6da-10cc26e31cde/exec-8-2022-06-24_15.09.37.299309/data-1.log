@@ -1,0 +1,13 @@
+{"obj": {"type": "LogStrings", "path": ["monitoring", "stderr"], "values": [{"value": "Info (NVML): The operating system has blocked the request.. GPU usage metrics may not be reported. For more information, see https://docs.neptune.ai/you-should-know/what-can-you-log-and-display#hardware-consumption\n", "step": null, "ts": 1656101377.504982}]}, "version": 1}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "cpu"], "values": [{"value": 0.6, "step": null, "ts": 1656101377.5072308}]}, "version": 2}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.556060791015625, "step": null, "ts": 1656101377.5072308}]}, "version": 3}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "stdout"], "values": [{"value": "/mnt/c/Users/lizhou/Documents/mlpipeline/Test-Pipeline/APP/deploy", "step": null, "ts": 1656101377.514543}]}, "version": 4}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "stdout"], "values": [{"value": "\n", "step": null, "ts": 1656101377.516059}]}, "version": 5}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "stdout"], "values": [{"value": "MODEL FETCHED!", "step": null, "ts": 1656101378.1905544}]}, "version": 6}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "stdout"], "values": [{"value": "\n", "step": null, "ts": 1656101378.191854}]}, "version": 7}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "cpu"], "values": [{"value": 0.1, "step": null, "ts": 1656101387.5147717}]}, "version": 8}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.560089111328125, "step": null, "ts": 1656101387.5147717}]}, "version": 9}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.5612030029296875, "step": null, "ts": 1656101397.522059}]}, "version": 10}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.5612030029296875, "step": null, "ts": 1656101407.5282469}]}, "version": 11}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.5629158020019531, "step": null, "ts": 1656101417.5306451}]}, "version": 12}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "stdout"], "values": [{"value": "Shutting down background jobs, please wait a moment...\n", "step": null, "ts": 1656101426.0957704}]}, "version": 13}

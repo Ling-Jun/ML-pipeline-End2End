@@ -1,0 +1,15 @@
+{"obj": {"type": "LogStrings", "path": ["monitoring", "stderr"], "values": [{"value": "Info (NVML): Driver Not Loaded. GPU usage metrics may not be reported. For more information, see https://docs.neptune.ai/you-should-know/what-can-you-log-and-display#hardware-consumption\n", "step": null, "ts": 1656100283.6853387}]}, "version": 1}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "cpu"], "values": [{"value": 0.1, "step": null, "ts": 1656100283.6871417}]}, "version": 2}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.5609359741210938, "step": null, "ts": 1656100283.6871417}]}, "version": 3}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "stdout"], "values": [{"value": "Model not available", "step": null, "ts": 1656100284.176624}]}, "version": 4}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "stdout"], "values": [{"value": "\n", "step": null, "ts": 1656100284.1781573}]}, "version": 5}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.56146240234375, "step": null, "ts": 1656100293.6917706}]}, "version": 6}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.56146240234375, "step": null, "ts": 1656100303.695867}]}, "version": 7}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.56146240234375, "step": null, "ts": 1656100313.698682}]}, "version": 8}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.56146240234375, "step": null, "ts": 1656100323.703588}]}, "version": 9}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.5611534118652344, "step": null, "ts": 1656100333.7071176}]}, "version": 10}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.5611534118652344, "step": null, "ts": 1656100343.71194}]}, "version": 11}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.5611534118652344, "step": null, "ts": 1656100353.7175803}]}, "version": 12}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.5611534118652344, "step": null, "ts": 1656100363.7221746}]}, "version": 13}
+{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.5611534118652344, "step": null, "ts": 1656100373.7285752}]}, "version": 14}
+{"obj": {"type": "LogStrings", "path": ["monitoring", "stdout"], "values": [{"value": "Shutting down background jobs, please wait a moment...\n", "step": null, "ts": 1656100382.4131527}]}, "version": 15}
