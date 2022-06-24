@@ -1,2 +1,2 @@
-web: bash train/train.sh
-web: bash deploy/deploy.sh
+web: python ./train/train.py -d ./data/df1_processed -mr ./artifacts/models/ -fr ./artifacts/figures/
+web: uvicorn deploy:app --reload --port 8001
