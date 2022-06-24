@@ -1,2 +1,2 @@
 web: python ./train/train.py -d ./data/df1_processed -mr ./artifacts/models/ -fr ./artifacts/figures/
-web: uvicorn deploy:app --reload --port 8001
+# web: uvicorn deploy:app --reload --port 8001
