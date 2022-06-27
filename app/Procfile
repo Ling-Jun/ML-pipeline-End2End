@@ -1,4 +1,0 @@
-# web: uvicorn deploy:app --reload --port 8001
-# web: python ./deploy/deploy.py
-# does the host have to be 0.0.0.0? the PORT has to be $PORT because Heroku assigns it dynamically
-web: uvicorn deploy.deploy:app --host 0.0.0.0 --port $PORT

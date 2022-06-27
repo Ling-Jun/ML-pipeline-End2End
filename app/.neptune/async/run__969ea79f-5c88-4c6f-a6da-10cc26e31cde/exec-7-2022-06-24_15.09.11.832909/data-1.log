@@ -1,9 +1,0 @@
-{"obj": {"type": "LogStrings", "path": ["monitoring", "stderr"], "values": [{"value": "Info (NVML): Driver Not Loaded. GPU usage metrics may not be reported. For more information, see https://docs.neptune.ai/you-should-know/what-can-you-log-and-display#hardware-consumption\n", "step": null, "ts": 1656101352.0393794}]}, "version": 1}
-{"obj": {"type": "LogFloats", "path": ["monitoring", "cpu"], "values": [{"value": 0.6, "step": null, "ts": 1656101352.041295}]}, "version": 2}
-{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.54901123046875, "step": null, "ts": 1656101352.041295}]}, "version": 3}
-{"obj": {"type": "LogStrings", "path": ["monitoring", "stdout"], "values": [{"value": "/mnt/c/Users/lizhou/Documents/mlpipeline/Test-Pipeline/APP/deploy", "step": null, "ts": 1656101352.0475457}]}, "version": 4}
-{"obj": {"type": "LogStrings", "path": ["monitoring", "stdout"], "values": [{"value": "\n", "step": null, "ts": 1656101352.048793}]}, "version": 5}
-{"obj": {"type": "LogStrings", "path": ["monitoring", "stdout"], "values": [{"value": "MODEL FETCHED!", "step": null, "ts": 1656101352.8179426}]}, "version": 6}
-{"obj": {"type": "LogStrings", "path": ["monitoring", "stdout"], "values": [{"value": "\n", "step": null, "ts": 1656101352.8193588}]}, "version": 7}
-{"obj": {"type": "LogFloats", "path": ["monitoring", "memory"], "values": [{"value": 0.5551795959472656, "step": null, "ts": 1656101362.046935}]}, "version": 8}
-{"obj": {"type": "LogStrings", "path": ["monitoring", "stdout"], "values": [{"value": "Shutting down background jobs, please wait a moment...\n", "step": null, "ts": 1656101367.487783}]}, "version": 9}
