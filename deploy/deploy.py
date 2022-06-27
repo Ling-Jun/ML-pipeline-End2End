@@ -5,6 +5,10 @@ from fastapi import FastAPI
 import os
 import neptune.new as neptune
 
+file_path = os.path.realpath(__file__)
+dir_path = os.path.dirname(file_path)
+root_path = os.path.dirname(dir_path)
+
 app = FastAPI(title="Remote Community Power Usage")
 
 model_unvailable_msg="Model NOT Available"
