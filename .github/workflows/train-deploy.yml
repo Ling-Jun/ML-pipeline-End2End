@@ -15,5 +15,7 @@ jobs:
       # the following line successfully triggers the training and can actually save the model on Neptune
       # this means the communication from within the Github Actions container to outside is possible. 
         run: bash ../../ML-pipeline-End2End/ML-pipeline-End2End/train/train.sh
-      - name: run deploy script
-        run: bash ../../ML-pipeline-End2End/ML-pipeline-End2End/deploy/deploy.sh
+      - name: fetch model from Neptune
+        run: python ../../ML-pipeline-End2End/ML-pipeline-End2End/artifacts/models/fetch_model.py
+      # - name: deploy to Heroku
+        
