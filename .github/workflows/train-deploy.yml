@@ -14,10 +14,14 @@ jobs:
       - name: run train script
       # the following line successfully triggers the training and can actually save the model on Neptune
       # this means the communication from within the Github Actions container to outside is possible. 
+        env:
+          NEPTUNE_API_TOKEN: ${{ secrets.NEPTUNE_API_TOKEN }}
         run: bash ../../ML-pipeline-End2End/ML-pipeline-End2End/train/train.sh
       - name: fetch model from Neptune
-        run: NEPTUNE_API_TOKEN=${{ secrets.NEPTUNE_API_TOKEN }} python ../../ML-pipeline-End2End/ML-pipeline-End2End/artifacts/models/fetch_model.py
+        env:
+          NEPTUNE_API_TOKEN: ${{ secrets.NEPTUNE_API_TOKEN }}
+        run: python ../../ML-pipeline-End2End/ML-pipeline-End2End/artifacts/models/fetch_model.py
       - name: test downloaded model
-        run: NEPTUNE_API_TOKEN=${{ secrets.NEPTUNE_API_TOKEN }} python ../../ML-pipeline-End2End/ML-pipeline-End2End/deploy/deploy.py
+        run: python ../../ML-pipeline-End2End/ML-pipeline-End2End/deploy/deploy.py
       # - name: deploy to Heroku
         
