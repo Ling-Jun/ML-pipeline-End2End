@@ -11,11 +11,6 @@ dir_path = os.path.dirname(dir_path)
 root_path = os.path.dirname(dir_path)
 print("Root path is "+root_path)
 
-
-# adding deploy dir to the system path so that we can import the model_unvailable_msg 
-sys.path.insert(0, root_path+'/deploy')
-from deploy import model_unvailable_msg
-
 run = neptune.init(project="lingjun/Remote-Community-Power-Usage", 
     api_token="eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vYXBwLm5lcHR1bmUuYWkiLCJhcGlfdXJsIjoiaHR0cHM6Ly9hcHAubmVwdHVuZS5haSIsImFwaV9rZXkiOiI2ZDQ3M2M3Yy0xYjNkLTRmMDYtOTYyNi00ODE4ZjgzZjA2MGMifQ==",
     # the run id of an existing run that has the model. Question is, HOW CAN WE not specify the run id but fetch the latest run?
