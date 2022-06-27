@@ -16,8 +16,8 @@ jobs:
       # this means the communication from within the Github Actions container to outside is possible. 
         run: bash ../../ML-pipeline-End2End/ML-pipeline-End2End/train/train.sh
       - name: fetch model from Neptune
-        run: python ../../ML-pipeline-End2End/ML-pipeline-End2End/artifacts/models/fetch_model.py
+        run: NEPTUNE_API_TOKEN=${{ secrets.NEPTUNE_API_TOKEN }} python ../../ML-pipeline-End2End/ML-pipeline-End2End/artifacts/models/fetch_model.py
       - name: test downloaded model
-        run: python ../../ML-pipeline-End2End/ML-pipeline-End2End/deploy/deploy.py
+        run: NEPTUNE_API_TOKEN=${{ secrets.NEPTUNE_API_TOKEN }} python ../../ML-pipeline-End2End/ML-pipeline-End2End/deploy/deploy.py
       # - name: deploy to Heroku
         
