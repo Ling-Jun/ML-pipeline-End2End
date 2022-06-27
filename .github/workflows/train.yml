@@ -12,4 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: list folders
-        run: ls ../../ML-pipeline-End2End/train
+        run: ls ../../ML-pipeline-End2End
