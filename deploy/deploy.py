@@ -23,38 +23,32 @@ print("MODEL FETCHED!")
 # we can also download the model from a remote location and load it
 model_path = root_path+"/artifacts/models/pickled_model.pkl"
 # joblib can load .pkl model
-model = load(model_path)
+# model = load(model_path)
 
-print(model.predict(fh=2))
+# print(model.predict(fh=2))
 
+@app.get("/")
+async def root():
+    return {"message": "Remote Community Power Usage"}
 
+@app.post("/predict", status_code=200)
+async def predict(fh: int):
+    """
+    Make predictions with the model
+    """
+    try:
+        # file_path = os.path.realpath(__file__)
+        # dir_path = os.path.dirname(file_path)
+        # root_path = os.path.dirname(dir_path)
+        # # we can also download the model from a remote location and load it
+        # model_path = root_path+"/artifacts/models/lgbm_forecaster.pickle"
+        model = load(model_path)
+    except:
+        print("Model not available")
+        return model_unvailable_msg
+    results = model.predict(fh=fh)
 
-
-
-
-
-# @app.get("/")
-# async def root():
-#     return {"message": "Remote Community Power Usage"}
-
-# @app.post("/predict", status_code=200)
-# async def predict(fh: int):
-#     """
-#     Make predictions with the model
-#     """
-#     try:
-#         file_path = os.path.realpath(__file__)
-#         dir_path = os.path.dirname(file_path)
-#         root_path = os.path.dirname(dir_path)
-#         # we can also download the model from a remote location and load it
-#         model_path = root_path+"/artifacts/models/lgbm_forecaster.pickle"
-#         model = load(model_path)
-#     except:
-#         print("Model not available")
-#         return model_unvailable_msg
-#     results = model.predict(fh=fh)
-
-#     return results
+    return results
 
 
 
