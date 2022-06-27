@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: list folders
-        run: ls ../../ML-pipeline-End2End/ML-pipeline-End2End/train/train.sh
+      - name: run train script
+        run: bash ../../ML-pipeline-End2End/ML-pipeline-End2End/train/train.sh
