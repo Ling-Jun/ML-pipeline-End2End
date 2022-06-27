@@ -12,4 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: run train script
+# the following line successfully triggers the training and can actually save the model on Neptune
+# this means the communication from within the Github Actions container to outside is possible. 
         run: bash ../../ML-pipeline-End2End/ML-pipeline-End2End/train/train.sh
