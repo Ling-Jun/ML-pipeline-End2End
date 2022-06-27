@@ -12,7 +12,7 @@ root_path = os.path.dirname(dir_path)
 print("Root path is "+root_path)
 
 run = neptune.init(project="lingjun/Remote-Community-Power-Usage", 
-    api_token="eyJhcGlfYWRkcmVzcyI6Imh0dHBzOi8vYXBwLm5lcHR1bmUuYWkiLCJhcGlfdXJsIjoiaHR0cHM6Ly9hcHAubmVwdHVuZS5haSIsImFwaV9rZXkiOiI2ZDQ3M2M3Yy0xYjNkLTRmMDYtOTYyNi00ODE4ZjgzZjA2MGMifQ==",
+    api_token=os.environ(['NEPTUNE_API_TOKEN']),
     # the run id of an existing run that has the model. Question is, HOW CAN WE not specify the run id but fetch the latest run?
     run="REM-50"
 )  
