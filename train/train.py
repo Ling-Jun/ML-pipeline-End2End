@@ -104,9 +104,10 @@ def train_forecaster(train, test, forecaster, train_label="train", test_label="t
 
     return fig, mae, forecaster
 
-
+env_vars = os.environ
+print(env_vars)
 run = neptune.init(project="lingjun/Remote-Community-Power-Usage", 
-    api_token=os.environ['NEPTUNE_API_TOKEN'],
+    api_token=env_vars['NEPTUNE_API_TOKEN'],
     run="REM-50"
 )  
 params = {
