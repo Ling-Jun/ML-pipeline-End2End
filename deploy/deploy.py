@@ -3,6 +3,7 @@ import uvicorn
 from joblib import load
 from fastapi import FastAPI
 import os
+import neptune.new as neptune
 
 app = FastAPI(title="Remote Community Power Usage")
 
