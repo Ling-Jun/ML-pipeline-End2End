@@ -27,10 +27,12 @@ jobs:
           python ./artifacts/models/fetch_model.py
           pwd
           git status
-          git add -A
-          git commit -m "downloaded & added model files"
-          git status
-          git remote -v
+      - name: Commit & push changes
+        run: |
+          git config --global user.name ${{ secrets.USER_NAME }}
+          git config --global user.email ${{ secrets.USER_EMAIL }}
+          git commit -am "added model files"
+          git push
         # git subtree split --prefix deploy -b deploy
         # git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git deploy
 #       - name: deploy to Heroku
