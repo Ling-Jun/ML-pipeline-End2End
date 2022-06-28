@@ -12,7 +12,7 @@ root_path = os.path.dirname(dir_path)
 print("Root path is "+root_path)
 
 env_vars = os.environ
-print(env_vars)
+# print(env_vars)
 
 run = neptune.init(project="lingjun/Remote-Community-Power-Usage", 
     api_token=env_vars['NEPTUNE_API_TOKEN'],
@@ -27,11 +27,11 @@ dir_path = os.path.dirname(file_path)
 
 # Download model to the specified directory
 run["model/pickled_model"].download(dir_path)
-print("Model is successfully downloaded!")
+print("Model is successfully downloaded to "+dir_path+"!")
 
 # download to deploy dir as well for publishing on Heroku
 run["model/pickled_model"].download(root_path+"/deploy")
-print("Model is successfully downloaded!")
+print("Model is successfully downloaded to "+root_path+"/deploy"+"!")
 
 # we can also download the model from a remote location and load it
 model_path = root_path+"/artifacts/models/pickled_model.pkl"
