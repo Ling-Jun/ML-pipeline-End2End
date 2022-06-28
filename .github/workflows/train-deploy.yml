@@ -23,7 +23,8 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
         run: |
-          python ../../ML-pipeline-End2End/ML-pipeline-End2End/artifacts/models/fetch_model.py
+          pip install -r requirements/requirements.txt
+          python ./artifacts/models/fetch_model.py
           pwd
           git status
         # git subtree split --prefix deploy -b deploy
