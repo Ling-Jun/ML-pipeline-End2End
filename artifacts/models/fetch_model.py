@@ -29,6 +29,10 @@ dir_path = os.path.dirname(file_path)
 run["model/pickled_model"].download(dir_path)
 print("Model is successfully downloaded!")
 
+# download to deploy dir as well for publishing on Heroku
+run["model/pickled_model"].download(root_path+"/deploy")
+print("Model is successfully downloaded!")
+
 # we can also download the model from a remote location and load it
 model_path = root_path+"/artifacts/models/pickled_model.pkl"
 model = load(model_path)
