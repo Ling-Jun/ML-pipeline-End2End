@@ -33,10 +33,10 @@ async def predict(fh: int):
     try:
         file_path = os.path.realpath(__file__)
         dir_path = os.path.dirname(file_path)
-        root_path = os.path.dirname(dir_path)
+        # root_path = os.path.dirname(dir_path)
         # we can also download the model from a remote location and load it
         # model_path = root_path+"/artifacts/models/pickled_model.pkl"
-        model_path = root_path+"/pickled_model.pkl"
+        model_path = dir_path+"/pickled_model.pkl"
         model = load(model_path)
     except:
         print("Model not available")
