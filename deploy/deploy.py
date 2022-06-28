@@ -39,7 +39,7 @@ async def predict(fh: int):
         model_path = dir_path+"/pickled_model.pkl"
         model = load(model_path)
     except:
-        print("Model not available")
+        print(model_unvailable_msg)
         return model_unvailable_msg
     results = model.predict(fh=fh)
 
