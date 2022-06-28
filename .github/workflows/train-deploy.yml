@@ -17,20 +17,23 @@ jobs:
         env:
           NEPTUNE_API_TOKEN: ${{ secrets.NEPTUNE_API_TOKEN }}
         run: bash ../../ML-pipeline-End2End/ML-pipeline-End2End/train/train.sh
-      - name: fetch model from Neptune
-        env:
-          NEPTUNE_API_TOKEN: ${{ secrets.NEPTUNE_API_TOKEN }}
-        run: python ../../ML-pipeline-End2End/ML-pipeline-End2End/artifacts/models/fetch_model.py
-      # - name: test downloaded model
-      #  run: python ../../ML-pipeline-End2End/ML-pipeline-End2End/deploy/deploy.py
-      - name: deploy to Heroku
+      - name: fetch model from Neptune & deploy 
         env:
           NEPTUNE_API_TOKEN: ${{ secrets.NEPTUNE_API_TOKEN }}
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
           HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
         run: |
+          python ../../ML-pipeline-End2End/ML-pipeline-End2End/artifacts/models/fetch_model.py
           git subtree split --prefix deploy -b deploy
           git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git deploy
-        # git remote add origin https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git
-        # git subtree push --prefix deploy https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+      # - name: deploy to Heroku
+      #  env:
+      #    NEPTUNE_API_TOKEN: ${{ secrets.NEPTUNE_API_TOKEN }}
+      #    HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      #    HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+      #  run: |
+      #    git subtree split --prefix deploy -b deploy
+      #    git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git deploy
+      #    git remote add origin https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git
+      #    git subtree push --prefix deploy https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
         
