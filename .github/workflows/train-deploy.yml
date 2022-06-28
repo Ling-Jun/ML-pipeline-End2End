@@ -24,6 +24,7 @@ jobs:
           HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
         run: |
           python ../../ML-pipeline-End2End/ML-pipeline-End2End/artifacts/models/fetch_model.py
+          pwd
           git subtree split --prefix deploy -b deploy
           git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git deploy
       # - name: deploy to Heroku
