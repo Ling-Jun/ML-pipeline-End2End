@@ -3,41 +3,7 @@
 # Github Actions workflow YAML file (NEEDS UPDATE)
 
 ```
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: run train script
-        env:
-          NEPTUNE_API_TOKEN: ${{ secrets.NEPTUNE_API_TOKEN }}
-        run: bash ../../ML-pipeline-End2End/ML-pipeline-End2End/train/train.sh
-      - name: fetch model from Neptune
-        env:
-          NEPTUNE_API_TOKEN: ${{ secrets.NEPTUNE_API_TOKEN }}
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
-        run: |
-          pip install -r requirements/requirements.txt
-          python ./artifacts/models/fetch_model.py
-          pwd
-          git status
-      - name: Commit & push changes
-        run: |
-          git config --global user.name ${{ secrets.USER_NAME }}
-          git config --global user.email ${{ secrets.USER_EMAIL }}
-          git add -A
-          git commit -m "added model files"
-          git push
-        # git subtree split --prefix deploy -b deploy
-        # git push --force https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git deploy
-      - name: deploy to Heroku
-        env:
-          NEPTUNE_API_TOKEN: ${{ secrets.NEPTUNE_API_TOKEN }}
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-          HEROKU_APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
-        run: |
-          git subtree push --prefix deploy https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+
 ```
 - Step: run train script.
 > this step uses the repo secret NEPTUNE_API_TOKEN to connect to NEPTUNE to upload the trained model to Neptune. The trainning happens within the Github Actions temporary server that was spun up when we trigger the workflow. 
