@@ -129,7 +129,7 @@ print(model_path)
 f = open(model_path, "wb")
 if model_path:
 #     dump(forecaster, model_path)
-    dump(f)
+    dump(forecaster, f)
     print("Model is saved at " + model_path)
 
 run["parameters"] = params
