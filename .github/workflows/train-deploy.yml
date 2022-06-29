@@ -12,7 +12,9 @@ jobs:
       - name: run train script
         env:
           NEPTUNE_API_TOKEN: ${{ secrets.NEPTUNE_API_TOKEN }}
-        run: bash ../train.sh
+        run: |
+          pwd 
+          bash ../train.sh
       - name: Push model to current Git repo
         run: |
           git config --global user.name ${{ secrets.USER_NAME }}
