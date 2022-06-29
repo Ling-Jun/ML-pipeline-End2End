@@ -1,6 +1,6 @@
 # Folder structure
 
-# Github Actions workflow YAML file
+# Github Actions workflow YAML file (NEEDS UPDATE)
 
 ```
 jobs:
