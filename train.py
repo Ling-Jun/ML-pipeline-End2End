@@ -125,8 +125,11 @@ img.savefig(args["fig_root"]+'/figure.png')
 
 model_path = args["model_root"] + "/lgbm_forecaster.pickle"
 print(model_path)
+
+f = open(model_path, "wb")
 if model_path:
-    dump(forecaster, model_path)
+#     dump(forecaster, model_path)
+    dump(f)
     print("Model is saved at " + model_path)
 
 run["parameters"] = params
