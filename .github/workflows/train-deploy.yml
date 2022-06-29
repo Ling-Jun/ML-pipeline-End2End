@@ -16,7 +16,7 @@ jobs:
           NEPTUNE_API_TOKEN: ${{ secrets.NEPTUNE_API_TOKEN }}
         run: |
           pwd 
-#          bash ../train.sh
+          bash ../../ML-pipeline-End2End/ML-pipeline-End2End/train.sh
       - name: Push model to current Git repo
         run: |
           git config --global user.name ${{ secrets.USER_NAME }}
