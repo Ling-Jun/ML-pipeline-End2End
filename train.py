@@ -108,7 +108,7 @@ env_vars = os.environ
 print(env_vars)
 run = neptune.init(project="lingjun/Remote-Community-Power-Usage", 
     api_token=env_vars['NEPTUNE_API_TOKEN'],
-    run="REM-50"
+    run="REM-49"
 )  
 params = {
     "n_estimators": 30,
