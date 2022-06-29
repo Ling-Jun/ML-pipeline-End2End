@@ -1,6 +1,61 @@
 # Folder structure
+The actual folder to deploy to Heroku is `./deploy`, `./train` contains the training script, `./monitor` contains the monitoring script, etc. 
 
-# github actions workflow YAML file
+```
+│   .gitignore
+│   README.md
+│
+├───.github
+│   └───workflows
+│           train-deploy.yml
+│
+├───.neptune
+│   └───async
+│       └───run__96a4be9b-d839-4297-b94e-b0bffe8c41e0
+│           ├───exec-0-2022-06-27_10.59.12.229798
+│           │       data-1.log
+│           │       last_ack_version
+│           │       last_put_version
+│           │
+│           └───exec-1-2022-06-27_12.08.03.111567
+│                   data-1.log
+│                   last_ack_version
+│                   last_put_version
+│
+├───artifacts
+│   ├───figures
+│   │       figure.png
+│   │
+│   └───models
+│           fetch_model.py
+│           lgbm_forecaster.pickle
+│           pickled_model.pkl
+│
+├───data
+│       df1_processed.csv
+│
+├───deploy
+│       deploy.py
+│       deploy.sh
+│       fetch_model.py
+│       pickled_model.pkl
+│       Procfile
+│       requirements.txt
+│       runtime.txt
+│
+├───monitor
+│       monitor.py
+│       test.sh
+│
+├───requirements
+│       requirements.in
+│       requirements.txt
+│
+└───train
+        train.py
+        train.sh
+```
+# Github Actions workflow YAML file
 
 ```
 jobs:
@@ -51,3 +106,5 @@ jobs:
 > Use of `git subtree push` command allows us to push a sub dir of the current repo to Heroku for deployment. However, `subtree` cmd doesn't have a `--force` push option, so every time we update the model, we might have trouble push it to Heroku. But that's another topic for another time. 
 
 # Things to improve
+1. If I already have the model in the `deploy` dir on Github repo, then the workflow will fail if I manually trigger it a 2nd time. It gives the error of `nothing to commit, working tree clean`, so this means I need to version the model somehow and update the model version each time I run the workflow. 
+2. If I run the workflow a 2nd time after triggering it, it can fail at the `push to Heroku` step, saying that `Updates were rejected because the remote contains work that you do not have locally. This is usually caused by another repository pushing to the same ref.`
