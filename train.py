@@ -123,7 +123,7 @@ img, mae, forecaster = train_forecaster(s_train, s_test, forecaster)
 img.savefig(args["fig_root"]+'/figure.png')
 
 
-model_path = args["model_root"] + "lgbm_forecaster.pickle"
+model_path = args["model_root"] + "/lgbm_forecaster.pickle"
 print(model_path)
 if model_path:
     dump(forecaster, model_path)
